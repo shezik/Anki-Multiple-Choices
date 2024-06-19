@@ -1,0 +1,85 @@
+/*
+    Code below is a fork of https://github.com/ale18V/Anki-Multiple-Choice/
+*/
+.card {
+    font-family: arial;
+    font-size: 20px;
+    text-align: left;
+    color: black;
+    background-color: white;
+}
+
+.multiple-choice-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+    column-gap: 10px;
+    margin-top: 10px;
+}
+
+.multiple-choice-button {
+    text-align: center;
+    background-color: gray;
+    padding: 2px;
+    border-radius: 15px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.multiple-choice-submit-button {
+    text-align: center;
+    margin-top: 10px;
+    background-color: gray;
+    padding: 2px;
+    border-radius: 15px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.multiple-choice-normal {
+    background-color: gray;
+}
+
+/* Style applied to the button containing the correct answer the user selected before submission in multi-selections */
+.multiple-choice-selected {
+    background-color: skyblue;
+}
+
+/* Style applied to the clicked button if it contains the wrong answer */
+.multiple-choice-wrong {
+    background-color: red;
+}
+
+/* Style applied to the button containing the correct answer, or the answer that the user chose correctly in multi-selections */
+.multiple-choice-correct {
+    background-color: green;
+}
+
+/* Style applied to the button containing the correct answer the user missed in multi-selections */
+.multiple-choice-missed {
+    background-color: orange;
+}
+
+/* Additional CSS for animating buttons */
+/* You can remove this */
+.multiple-choice-button:not(.mobile .multiple-choice-button):hover {
+    transform: scale(1.02);
+}
+
+.multiple-choice-button:not(.mobile .multiple-choice-button):active {
+    transform: scale(0.99);
+}
+
+.multiple-choice-submit-button:not(.mobile .multiple-choice-submit-button):hover {
+    transform: scale(1.02);
+}
+
+.multiple-choice-submit-button:not(.mobile .multiple-choice-submit-button):active {
+    transform: scale(0.99);
+}
