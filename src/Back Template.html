@@ -9,14 +9,7 @@
     qaElement.innerHTML = qaElement.innerHTML.replace(/@##(.*?)\$\$@/g, '<img src="$1">');
 </script>
 
-<div class="multiple-choice-container">
-    <!--
-        <div class="multiple-choice-button">none</div>
-        <div class="multiple-choice-button">none</div>
-        <div class="multiple-choice-button">none</div>
-        <div class="multiple-choice-button">none</div>
-    -->
-</div>
+<div class="multiple-choice-container"></div>
 <p id="multiple-choice-debug"></p>
 
 <hr id=answer>
@@ -62,7 +55,7 @@ function init() {
         }
     }
 
-    // Style the chosen and the correct buttons
+    // Stylize the chosen and the correct buttons
     let correctButtonsIndices = getCorrectButtonsIndices();
     let singleSelection = (correctButtonsIndices.length === 1);
     let selectedButtonsIndices = getSelectedButtonsIndices();
@@ -102,6 +95,8 @@ function getSelectedButtonsIndices() {
 }
 
 debugger;
+if (window.shortcutHandler)
+    window.shortcutHandler.removeAll();
 init();
 Persistence.clear();
 </script>
