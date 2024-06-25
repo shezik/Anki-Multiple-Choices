@@ -59,6 +59,7 @@ function init() {
     let correctButtonsIndices = getCorrectButtonsIndices();
     let singleSelection = (correctButtonsIndices.length === 1);
     let selectedButtonsIndices = getSelectedButtonsIndices();
+    let selectedAnything = (selectedButtonsIndices.length > 0);
     if (correctButtonsIndices.length === 0)
         return;
     buttons.forEach(function (button, index) {
@@ -68,7 +69,7 @@ function init() {
         if (isCorrect && isSelected)
             styleButton(button, 'multiple-choice-correct');
         else if (isCorrect && !isSelected)
-            styleButton(button, singleSelection ? 'multiple-choice-correct' : 'multiple-choice-missed');
+            styleButton(button, (singleSelection && selectedAnything) ? 'multiple-choice-correct' : 'multiple-choice-missed');
         else if (!isCorrect && isSelected)
             styleButton(button, 'multiple-choice-wrong');
         else if (!isCorrect && !isSelected)
