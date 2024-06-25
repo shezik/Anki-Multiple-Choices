@@ -17,7 +17,7 @@
     <div class="multiple-choice-button">none</div>
 -->
 </div>
-<div class="multiple-choice-submit-button">Submit</div>
+<div class="multiple-choice-card-type-label">Multiple Selection</div>
 <textarea id="multiple-choice-choices" style="display: none;">{{ Choices }}</textarea>
 <textarea id="multiple-choice-answer" style="display: none;">{{ Answer }}</textarea>
 <p id="multiple-choice-debug"> </p>
@@ -138,7 +138,7 @@ function init() {
         return;
     }
     if (correctChoicesIndices.length > choices.length) {
-        log('Correct answers is more than available choices.');
+        log('Correct answers are more than available choices.');
         return;
     }
     
@@ -179,14 +179,9 @@ function init() {
         Persistence.setItem(button.getAttribute('Index'), button.innerHTML);
     });
 
-    // Configure the submit button
-    let submitButton = document.getElementsByClassName('multiple-choice-submit-button')[0];
-    if (isMobile) {
-        submitButton.addEventListener('touchend', flipCard);
-    } else if (isDesktop) {
-        submitButton.addEventListener('click', flipCard);
-    }
-    submitButton.style.display = singleSelection ? 'none' : '';
+    // Configure the card type indicator
+    let cardTypeLabel = document.getElementsByClassName('multiple-choice-card-type-label')[0];
+    cardTypeLabel.style.display = singleSelection ? 'none' : '';
 }
 
 // Define button event handler functions
@@ -204,12 +199,12 @@ function btnEventListener() {
         unstyleButton(this, 'multiple-choice-normal');
         styleButton(this, 'multiple-choice-selected');
     }
+    Persistence.setItem('selectedButtonsIndices', selectedButtonsIndices);
     if (singleSelection)
         flipCard();
 }
 
 function flipCard() {
-    Persistence.setItem('selectedButtonsIndices', selectedButtonsIndices);
     if (typeof pycmd !== 'undefined')
         pycmd('ans');
     else if (typeof AnkiDroidJS !== 'undefined')

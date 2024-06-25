@@ -9,6 +9,17 @@
     background-color: white;
 }
 
+.multiple-choice-card-type-label {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
 .multiple-choice-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -19,19 +30,6 @@
 
 .multiple-choice-button {
     text-align: center;
-    background-color: gray;
-    padding: 2px;
-    border-radius: 15px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.multiple-choice-submit-button {
-    text-align: center;
-    margin-top: 10px;
     background-color: gray;
     padding: 2px;
     border-radius: 15px;
@@ -73,13 +71,5 @@
 }
 
 .multiple-choice-button:not(.mobile .multiple-choice-button):active {
-    transform: scale(0.99);
-}
-
-.multiple-choice-submit-button:not(.mobile .multiple-choice-submit-button):hover {
-    transform: scale(1.02);
-}
-
-.multiple-choice-submit-button:not(.mobile .multiple-choice-submit-button):active {
     transform: scale(0.99);
 }

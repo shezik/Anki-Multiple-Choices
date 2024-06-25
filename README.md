@@ -31,7 +31,7 @@ The number of buttons are the same as the number of choices you provided.
 
 For cards with only one correct answer, the behavior is the same as the original repository, except for that the number of buttons is not limited to 4.
 
-A "Submit" button will appear below the choice buttons if there are more than one correct answer, this is the multiple selection mode. Choices you selected correctly will be marked green, correct choices you missed are orange, and incorrect choices you selected are red.
+A label will appear below the choice buttons if there are more than one correct answer, indicating that this is the multiple selection mode. Choices you selected correctly will be marked green, correct choices you missed are orange, and incorrect choices you selected are red.
 
 ## Debug
 Both front.html and back.html include the line: `<p id="multiple-choice-debug"></p>`. \
